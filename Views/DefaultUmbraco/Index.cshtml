@@ -1,0 +1,16 @@
+@using Umbraco.Headless.Client.Net.Models
+@model ContentItem
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<h2>@Model.Name, @Model.Properties.Count()</h2>
+
+<h3>Properties</h3>
+<ul>
+    @foreach (var p in Model.Properties)
+    {
+        <li>@p.Alias = @p.Value</li>
+    }
+</ul>
